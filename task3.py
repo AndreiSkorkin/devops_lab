@@ -1,6 +1,6 @@
-import psutil
 import configparser
 import datetime
+import psutil
 import time
 cfg = configparser.ConfigParser()
 cfg.read('settings.cfg')
@@ -27,10 +27,10 @@ def info():
 while True:
     now = datetime.datetime.now()
     CPUload = psutil.cpu_percent(interval=1)
-    memusage = psutil.virtual_memory().available/(1024*1024)
-    vmemusage = psutil.virtual_memory().used/(1024*1024)
+    memusage = psutil.virtual_memory().available / (1024 * 1024)
+    vmemusage = psutil.virtual_memory().used / (1024 * 1024)
     IOinfo = psutil.disk_io_counters().read_bytes
-    network = psutil.net_io_counters().bytes_recv/(1024*1024)
+    network = psutil.net_io_counters().bytes_recv / (1024 * 1024)
     counter += 1
     time.sleep(int(period))
     info()
