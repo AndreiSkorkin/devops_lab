@@ -1,5 +1,5 @@
-import yaml
 from jinja2 import Template
+import yaml
 
 with open('data.yml') as data_file:
     config_data = yaml.load(data_file)
